@@ -17,7 +17,7 @@ Clone this repo (you need ruby installed in your computer).
 
 Change to the app directory
 
-   $ cd Ruby-scraper
+    cd Ruby-scraper
 
 **IMPORTANT**
 To run this application you should add execute permissions to the main file. [Here](https://commandercoriander.net/blog/2013/02/16/making-a-ruby-script-executable/) you can find more information. 
@@ -51,6 +51,7 @@ finally run for watch the results
 This scraper extracts the information from Women Who Code page, you can use it for showing this info in another place or making another wonderful application to share these events!
 
 This application starts with a menu:
+
     ===================
     Select an option:
     1. Show all events
@@ -59,11 +60,13 @@ This application starts with a menu:
     ===================
 
 If you choose all events it is going to display the all list of existent events:
+
     DATE:  3 Part Mini Data Science Bootcamp (Learn the data science stack / tools and how to approach DS projects with WWCode Data Science  
     NAME: WWCode San Diego 
     LINK: http://womenwhocode.com/sandiego 
 
 You can also choose option 2) Search an event and type a keyword to look for. Example:
+
     What are you looking for?: Javascript
 
     =========================
