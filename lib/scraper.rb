@@ -48,6 +48,7 @@ class Scraper
 
   def clear(str)
     str = str.gsub('Â', '')
+    str = str.gsub('ð«', '')
     str = str.lstrip
     str = str.rstrip
     str
