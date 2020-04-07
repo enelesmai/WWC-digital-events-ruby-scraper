@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+require './lib/scraper'
+
+# Setting up uri
+uri = 'https://www.womenwhocode.com/digital'
+scraper = Scraper.new(uri)
+exit = false
+
+until exit
+  puts "===================\n"
+  puts 'Select an option:'
+  puts '1. Show all events'
+  puts '2. Search an event'
+  puts '3. Exit'
+  puts "===================\n"
+
+  option = gets.chomp
+
+  case option
+  when '1'
+    scraper.parse_events
+    puts scraper.display_events
+  when '2'
+    print 'What are you looking for?: '
+    search = gets.chomp
+    scraper.parse_events(search)
+    puts scraper.display_events
+  when '3'
+    exit = true
+  else
+    puts 'Select a valid option'
+  end
+end
+
+puts 'Thanks for using this scraper!'
