@@ -5,7 +5,7 @@ This project was created to display remote/digital events from [Women Who Code D
 
 ## Project specifications
 
-This app displays all the events grabed on the original page and also provide a way to search events by keywords.It shows the date and also provide the link to register on each event.
+This app use [Nokogiri gem](https://github.com/sparklemotion/nokogiri) to extract info and displays all the events grabed on the original page and also provide a way to search events by keywords.It shows the date and also provide the link to register on each event.
 
 
 ## Usage
