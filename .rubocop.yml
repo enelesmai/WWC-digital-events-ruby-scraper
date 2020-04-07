@@ -43,6 +43,8 @@ Style/HashTransformValues:
   Enabled: false
 Style/MissingElse:
   Enabled: false
+Style/Copyright:
+  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
