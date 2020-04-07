@@ -4,6 +4,8 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
 
+  EnabledByDefault: true
+  
   DisplayCopNames: true
 
 Layout/LineLength:
@@ -21,6 +23,8 @@ Metrics/BlockLength:
 
 Style/Documentation:
   Enabled: false
+Style/DocumentationMethod:
+  Enabled: false  
 Style/ClassAndModuleChildren:
   Enabled: false
 Style/EachForSimpleLoop:
@@ -36,6 +40,8 @@ Style/HashEachMethods:
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
+  Enabled: false
+Style/MissingElse:
   Enabled: false
 
 Layout/HashAlignment:

@@ -1,6 +1,6 @@
-require 'nokogiri'
-require 'open-uri'
-require_relative '../lib/event.rb'
+require('nokogiri')
+require('open-uri')
+require_relative('../lib/event.rb')
 class Scraper
   attr_reader :doc
   attr_reader :schedule
