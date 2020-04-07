@@ -98,6 +98,7 @@ Tools used on this project
 - VSCode Ruby by Stafford Brunk 0.27.0
 - Rubocop 0.8.3
 - RSpec 3.9
+- Nokogiri gem
 
 
 ## Screenshot
