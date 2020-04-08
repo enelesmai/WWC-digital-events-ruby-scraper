@@ -6,8 +6,9 @@ class Scraper
   attr_reader :schedule
 
   # rubocop:disable Security/Open
-  def initialize(uri)
-    @doc = Nokogiri::HTML(open(uri))
+  def initialize(uri, is_local)
+    f = is_local ? File.open(uri) : open(uri)
+    @doc = Nokogiri::HTML(f)
   end
   # rubocop:enable Security/Open
 
@@ -16,7 +17,7 @@ class Scraper
     @doc.css('p[dir=ltr]').each_with_index do |item, index|
       link = @doc.css('p a')[index + 2]['href']
       name = @doc.css('p a')[index + 2].text
-      date = clear(item.text)
+      date = item.text
 
       if (!search.nil? && name.upcase.include?(search.upcase)) || search.nil?
         Event.new(name, date, link) unless empty_date?(date)
@@ -42,15 +43,9 @@ class Scraper
     string_events
   end
 
+  private
+
   def empty_date?(date)
     date.empty? || date.empty? || date.size == 1
-  end
-
-  def clear(str)
-    str = str.gsub('Â', '')
-    str = str.gsub('ð«', '')
-    str = str.lstrip
-    str = str.rstrip
-    str
   end
 end

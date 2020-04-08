@@ -45,13 +45,29 @@ RSpec.describe(Event) do
   end
   describe '#total_events' do
     context 'add events to the list' do
-      it 'returns total_events quals to three' do
+      it 'returns total_events equals to three' do
         Event.clear
         Event.new('Introduction to Javascript', 'April 6 10AM to 2PM', 'meetup.com/codificadas')
         Event.new('Introduction to Ruby', 'April 8 10AM to 2PM', 'meetup.com/codificadas')
         Event.new('Introduction to HTML5', 'April 2 10AM to 2PM', 'meetup.com/codificadas')
         expected = Event.total_events
         expect(expected).to(eql(3))
+      end
+    end
+  end
+  describe '#clear' do
+    context 'clean date from useless caracteres' do
+      it 'returns date string without character Â' do
+        Event.clear
+        Event.new('Introduction to Javascript', 'April 6 10AM to 2PM ÂÂÂ', 'meetup.com/codificadas')
+        event = Event.show_selected(0)
+        expect(event.date).to(eql('April 6 10AM to 2PM'))
+      end
+      it 'returns date string without white spaces at the end' do
+        Event.clear
+        Event.new('Introduction to Javascript', 'April 6 10AM to 2PM    ', 'meetup.com/codificadas')
+        event = Event.show_selected(0)
+        expect(event.date).to(eql('April 6 10AM to 2PM'))
       end
     end
   end

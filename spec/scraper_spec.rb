@@ -1,7 +1,9 @@
 require_relative('../lib/scraper.rb')
 
 RSpec.describe(Scraper) do
-  let(:scraper) { Scraper.new('https://www.womenwhocode.com/digital') }
+  let(:scraper) { Scraper.new('https://www.womenwhocode.com/digital', false) }
+  let(:scraper_empty_dates) { Scraper.new('./spec/examples/empty_events.html', true) }
+  let(:scraper_one_event) { Scraper.new('./spec/examples/one_event.html', true) }
   describe '#parse_events' do
     context 'search events on a list' do
       it 'returns arraylist with all events when no param is given' do
@@ -29,22 +31,14 @@ RSpec.describe(Scraper) do
     end
   end
   describe '#empty_date?' do
-    context 'compare string param to determine whether it is empty or not' do
-      it 'returns true if param is empty or size == 1' do
-        expect(scraper.empty_date?('')).to(eql(true))
+    context 'from a given list of events parse only the event where date is not empty' do
+      it 'returns zero events from an invalid list' do
+        events = scraper_empty_dates.parse_events
+        expect(events.count).to(eql(0))
       end
-      it 'returns false if param is not empty or size == 1' do
-        expect(scraper.empty_date?('APR 8')).to(eql(false))
-      end
-    end
-  end
-  describe '#clear' do
-    context 'clean string from useless caracteres' do
-      it 'returns string without character Â' do
-        expect(scraper.clear('APR 8 ÂÂÂ')).to(eql('APR 8'))
-      end
-      it 'returns string without white spaces at the end' do
-        expect(scraper.clear('APR 10   ')).to(eql('APR 10'))
+      it 'returns one event from a list of one valid event' do
+        events = scraper_one_event.parse_events
+        expect(events.count).to(eql(1))
       end
     end
   end

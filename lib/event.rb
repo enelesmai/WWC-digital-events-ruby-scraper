@@ -6,7 +6,7 @@ class Event
 
   def initialize(name, date, link)
     @name = name
-    @date = date
+    @date = clear(date)
     @link = link
     @@all << self
   end
@@ -21,5 +21,19 @@ class Event
 
   def self.total_events
     @@all.count
+  end
+
+  def self.show_selected(selected)
+    @@all[selected]
+  end
+
+  private
+
+  def clear(str)
+    str = str.gsub('Â', '')
+    str = str.gsub('ð«', '')
+    str = str.lstrip
+    str = str.rstrip
+    str
   end
 end

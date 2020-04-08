@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
-require('./lib/scraper')
+require_relative('../lib/scraper')
 
 # Setting up uri
 uri = 'https://www.womenwhocode.com/digital'
-scraper = Scraper.new(uri)
+scraper = Scraper.new(uri, false)
 exit = false
 
 until exit

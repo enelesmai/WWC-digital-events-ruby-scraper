@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+<head>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"4c1e8051d3","applicationID":"335981452","transactionName":"Ig1bQxEKCgpdE0lGVRQFRhgQDQkR","queueTime":2,"applicationTime":49,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"4c1e8051d3",applicationID:"335981452"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<title>Women Who Code Remote Events | Women Who Code</title>
+<meta content='Women Who Code Remote Events' name='description'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+<meta content='Women Who Code | Women Who Code Remote Events' name='title'>
+<meta content='on' name='twitter:widgets:csp'>
+<meta content='FGaOg6vwLaugx_vTv_3h-pdhXdAxIkFvE0RNVYn4WqI' name='google-site-verification'>
+<link href='/images/favicons/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicons/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicons/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/images/favicons/site.webmanifest' rel='manifest'>
+<link color='#007a7c' href='/images/favicons/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='#007a7c' name='msapplication-TileColor'>
+<meta content='#ffffff' name='theme-color'>
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='@WomenWhoCode' name='twitter:site'>
+<meta content='Women Who Code | Women Who Code Remote Events' name='twitter:title'>
+<meta content='https://process.filestackapi.com/resize=width:1120,height:586/quality=value:100/compress/RHJzJuTZQkSwIyQZO226' name='twitter:image'>
+<meta content='https://process.filestackapi.com/resize=width:1120,height:586/quality=value:100/compress/RHJzJuTZQkSwIyQZO226' property='og:image'>
+<meta content='https://www.womenwhocode.com/digital' property='og:url'>
+<meta content='article' property='og:type'>
+<meta content='Women Who Code' property='og:site_name'>
+<meta content='Women Who Code | Women Who Code Remote Events' property='og:title'>
+<meta content='Women Who Code Remote Events' property='og:description'>
+<meta content='https://www.womenwhocode.com/digital' property='fb:app_id'>
+<link rel="stylesheet" media="all" href="https://www.womenwhocode.com/assets/application-c77d598fefec78d62fbe265781e98040a3087405935f8387d645274cae9851d6.css" />
+<script src="https://www.womenwhocode.com/packs/js/application-ed5bcd8179e1bd0d98e9.js"></script>
+<script src="https://www.womenwhocode.com/assets/application-13b2bd8154fbed69f60f8683632b83973e71bf8bac46816d201ab32d4dc63418.js" media="all"></script>
+<script src="https://www.womenwhocode.com/assets/autotrack-a3adb9f2d23adbffb4ea8897ba0f7a9c563a325abe067609165391c92f608849.js" async="async"></script>
+<script src="https://static.filestackapi.com/v3/filestack.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://www.womenwhocode.com/assets/jquery.validate.min-55f4d0c0f36695675f74f8c7a9925c48f2ef50203c4c2ea28af2537eb4ba8e3f.js"></script>
+<script src="https://www.womenwhocode.com/assets/validate-additional-methods.min-59439ba6d7fa25b6eb47fe401c6cb2b4b68b9d0a8c2cd4051ee0bf5ede2f17c3.js"></script>
+<script src="https://www.womenwhocode.com/assets/datalist-polyfill.min-71304c77bc4a39e92003ca84884beb93058f2d62241dc55f32881be5d5d59b9a.js"></script>
+<script src="https://www.womenwhocode.com/assets/purify.min-56b3c61dcfb6d1789d7fe14efed833ca9d9088592f1022609b9b38eadb2a366d.js"></script>
+<script src="https://www.womenwhocode.com/assets/prism-d7e9687efe1c43e146d9cf38213558262bcd08df851441501fa08120f53e8548.js"></script>
+<link rel="stylesheet" media="screen" href="https://www.womenwhocode.com/assets/prism-0a218e159326f7c60f44b04ec1c59be65d4418dda53d6b188d93af0bf936e1cc.css" />
+<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="oh68IpnMpdtjay8miqvFrf4XWoBsOLN9IPkwqlc+OyQ5EmyKFW6pl5e5uXmGInlO/SzFndb79TbSzAu2y8J2wQ==" />
+</head>
+<body class='show' id='slugs'>
+<div id='top-nav'>
+<div class='top-nav-inner'>
+<a aria-label='Women Who Code Home' class='logo' data-event-action='logo' data-event-category='header-nav' href='/' title='Women Who Code Home'>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 466.5 249.3" style="enable-background:new 0 0 466.5 249.3;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="logo">
+	 <title>Women Who Code</title>
+
+<g>
+	<path id="path2989_9_" d="M39.9,244.2C12.3,231.6-2,202.1,0.2,162.1C2.7,117.4,28.9,88.2,67,87.5
+		C93.1,87,94.1,88,94.1,113.4c0,12.1-0.9,22-2.1,22c-1.1,0-4.5-1.9-7.5-4.2c-10.9-8.3-26.7-2.7-33.7,11.9c-7.1,15-4.7,48,4.2,57.5
+		c7.9,8.4,23.1,9.6,33.1,2.7c3.5-2.5,6.6-4,7-3.5c0.3,0.5-0.1,10.9-0.9,23.1c-1.4,20.7-2,22.2-8.5,24
+		C72.6,250.5,51.1,249.3,39.9,244.2L39.9,244.2z M143.7,243.9C114,227.7,99,185.7,107.8,143.3c13.4-64.5,88.4-76.6,114.3-18.4
+		c5.4,12.2,6.6,19.5,6.6,42.6c0.1,26-0.5,29.1-9.2,46.7c-12.1,24.5-24.5,33.3-48.7,34.5C158,249.2,151.4,248.1,143.7,243.9
+		L143.7,243.9z M179.8,195.2c4.9-14.6,2.7-51.7-3.7-61.4c-11.3-17.2-22.4,0.4-22.2,35c0.2,29.8,3.9,39.6,14.4,38.4
+		C174.6,206.4,176.8,204.1,179.8,195.2z M247.6,168.1l0.7-81.3l26.6,0.3c29.3,0.4,43.8,3.9,57.4,14c35.3,26.4,37.3,102.1,3.4,132.7
+		c-13.8,12.4-25.6,15.5-60.4,15.5h-28.5L247.6,168.1L247.6,168.1z M307.3,200.1c7.6-11.6,7-50.4-0.9-61.1
+		c-12.1-16.2-13.7-12.7-13.6,29.6c0,35.1,0.5,39,4.8,39C300.3,207.7,304.6,204.3,307.3,200.1L307.3,200.1z M376,245.8
+		c-0.7-1.9-1-38.5-0.6-81.3l0.7-77.8h40.3h40.3l0.8,20.2l0.8,20.1h-18.2H422v9.7v9.7h16.7h16.7V166v19.5h-16.7H422v11.8V209h17.4
+		h17.4l0.8,20.1l0.8,20.1h-40.5C387.8,249.3,377,248.4,376,245.8L376,245.8z"></path>
+	<g>
+		<path d="M13,66.8L0.7,10.8h9.7l9,41l8.5-41h8.6l8.1,40.8l9.5-40.8H61L48.1,66.8h-9.8l-7.6-38.5l-8,38.5H13z"></path>
+		<path d="M89.4,68.2c-7.5,0-13.5-2.7-17.9-8c-4.5-5.4-6.7-12.5-6.7-21.4c0-9,2.3-16.2,6.8-21.5c4.5-5.3,10.6-8,18.2-8
+			c7.6,0,13.7,2.7,18.2,8c4.5,5.3,6.8,12.4,6.8,21.4c0,9.1-2.3,16.4-6.8,21.6C103.4,65.6,97.2,68.2,89.4,68.2z M89.5,60.5
+			c4.4,0,7.9-2,10.4-5.9c2.6-3.9,3.8-9.3,3.8-16c0-6.5-1.3-11.7-3.9-15.7S94,17,89.7,17c-4.3,0-7.7,2-10.3,5.9
+			c-2.6,3.9-3.8,9.2-3.8,15.8c0,6.5,1.3,11.8,3.8,15.8C82,58.5,85.4,60.5,89.5,60.5z"></path>
+		<path d="M123.9,66.8V10.8h13.6l11.9,39.4l12.2-39.4h11.9v56.1h-9.5V24.5l-12,38.6h-8.3L132,23.9v42.9H123.9z"></path>
+		<path d="M185.8,66.8V10.8h30.8v7.7h-20.5v15.6H213v7.5h-16.8v17.3h22.1v8H185.8z"></path>
+		<path d="M226.8,66.8V10.8h9l22.8,38.3V10.8h8.2v56.1h-9.2L235,28.5v38.3H226.8z"></path>
+		<path d="M308.5,66.8l-12.3-56.1h9.7l9,41l8.5-41h8.6l8.1,40.8l9.5-40.8h7.1l-12.9,56.1h-9.8l-7.6-38.5l-8,38.5H308.5z
+			"></path>
+		<path d="M363.3,66.8V10.8h10.3v22.8H394V10.8h10.3v56.1H394V41.3h-20.4v25.6H363.3z"></path>
+		<path d="M438.2,68.2c-7.5,0-13.5-2.7-17.9-8c-4.5-5.4-6.7-12.5-6.7-21.4c0-9,2.3-16.2,6.8-21.5c4.5-5.3,10.6-8,18.2-8
+			c7.6,0,13.7,2.7,18.2,8c4.5,5.3,6.8,12.4,6.8,21.4c0,9.1-2.3,16.4-6.8,21.6C452.2,65.6,446,68.2,438.2,68.2z M438.3,60.5
+			c4.4,0,7.9-2,10.4-5.9c2.6-3.9,3.8-9.3,3.8-16c0-6.5-1.3-11.7-3.9-15.7c-2.6-3.9-6-5.9-10.2-5.9c-4.3,0-7.7,2-10.3,5.9
+			c-2.6,3.9-3.8,9.2-3.8,15.8c0,6.5,1.3,11.8,3.8,15.8C430.8,58.5,434.1,60.5,438.3,60.5z"></path>
+	</g>
+</g>
+</svg>
+
+</a>
+<div aria-label='open-website-links' class='modal-trigger website-links modal-web-link' data-modal-trigger='#website-links' onclick='modal[&#39;closed&#39;].CLICK(event)' onkeydown='modal[&#39;closed&#39;].KEYDOWN(event)' role='button' tabindex='0'>
+<div class='navicon website-links' data-modal-trigger='#website-links'></div>
+</div>
+<div class='desktop-nav'>
+<nav>
+<ul>
+<li class='dropdown-link involved-dropdown hidden-nav' id='network-dropdown'>
+<a aria-haspopup='true' data-event-action='networks-board-dropdown' data-event-category='header-nav' href='#networks' onclick='return false;' role='button'>Networks</a>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="400" height="217.5" x="0px" y="0px" viewbox="0 0 433.5 217.5" style="enable-background:new 0 0 433.5 217.5;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="dropdown-pointer">
+<polyline points="408.8,10 216.8,202 24.7,10 "></polyline>
+</svg>
+
+<ul aria-labelledby='network-dropdown' class='networks'>
+<li>
+<a data-event-action='find-network' data-event-category='header-nav' href='/networks'>Find a Network</a>
+</li>
+<li>
+<a data-event-action='upcoming-events' data-event-category='header-nav' href='/events'>Upcoming events</a>
+</li>
+</ul>
+</li>
+<li>
+<a data-event-action='view-jobs' data-event-category='header-nav' href='/about'>About</a>
+</li>
+<li>
+<a data-event-action='jobs-learn-more' data-event-category='header-nav' href='/companies'>For Companies</a>
+</li>
+<li>
+<a data-event-action='view-jobs' data-event-category='header-nav' href='/blog'>Blog</a>
+</li>
+<li class='dropdown-link jobs-dropdown hidden-nav' id='jobs-dropdown'>
+<a aria-haspopup='true' data-event-action='job-board-dropdown' data-event-category='header-nav' href='#jobboard' onclick='return false;' role='button'>Job Board</a>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="400" height="217.5" x="0px" y="0px" viewbox="0 0 433.5 217.5" style="enable-background:new 0 0 433.5 217.5;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="dropdown-pointer">
+<polyline points="408.8,10 216.8,202 24.7,10 "></polyline>
+</svg>
+
+<ul aria-labelledby='jobs-dropdown' class='hidden jobs'>
+<li>
+<a data-event-action='view-jobs' data-event-category='header-nav' href='/jobs'>View Jobs</a>
+</li>
+<li class='boxed'>
+<a data-event-action='post-job' data-event-category='header-nav' href='/jobs/post'>
+Post a Job
+</a>
+</li>
+</ul>
+</li>
+<li class='donate'>
+<a data-event-action='donate' data-event-category='header-nav' href='/donate'>Donate</a>
+</li>
+<li class='dropdown-link user-area desktop'>
+<div class='user-area-inner'>
+<a class='signin' data-event-action='signin' data-event-category='header-nav' href='/login'>signin</a>
+<a class='signup' data-event-action='sign-up' data-event-category='header-nav' href='/signup'>signup</a>
+</div>
+</li>
+
+</ul>
+</nav>
+
+</div>
+<div class='user-area-nav'>
+<a class='signin' data-event-action='signin' data-event-category='header-nav' href='/login'>signin</a>
+<a class='signup' data-event-action='sign-up' data-event-category='header-nav' href='/signup'>signup</a>
+</div>
+</div>
+</div>
+<div class='modal'>
+<div class='modal-fade-screen teal website-links' id='website-links'>
+<div class='modal-inner'>
+<div aria-label='close-website-links' class='modal-close teal-modal' data-modal-trigger='#website-links' for='website-links' onclick='modal[&#39;opened&#39;].CLICK(event)' onkeydown='modal[&#39;opened&#39;].KEYDOWN(event)' role='button' tabindex='0'></div>
+<nav>
+<ul>
+<li class='dropdown-link involved-dropdown hidden-nav' id='network-dropdown'>
+<a aria-haspopup='true' data-event-action='networks-board-dropdown' data-event-category='header-nav' href='#networks' onclick='return false;' role='button'>Networks</a>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="400" height="217.5" x="0px" y="0px" viewbox="0 0 433.5 217.5" style="enable-background:new 0 0 433.5 217.5;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="dropdown-pointer">
+<polyline points="408.8,10 216.8,202 24.7,10 "></polyline>
+</svg>
+
+<ul aria-labelledby='network-dropdown' class='networks'>
+<li>
+<a data-event-action='find-network' data-event-category='header-nav' href='/networks'>Find a Network</a>
+</li>
+<li>
+<a data-event-action='upcoming-events' data-event-category='header-nav' href='/events'>Upcoming events</a>
+</li>
+</ul>
+</li>
+<li>
+<a data-event-action='view-jobs' data-event-category='header-nav' href='/about'>About</a>
+</li>
+<li>
+<a data-event-action='jobs-learn-more' data-event-category='header-nav' href='/companies'>For Companies</a>
+</li>
+<li>
+<a data-event-action='view-jobs' data-event-category='header-nav' href='/blog'>Blog</a>
+</li>
+<li class='dropdown-link jobs-dropdown hidden-nav' id='jobs-dropdown'>
+<a aria-haspopup='true' data-event-action='job-board-dropdown' data-event-category='header-nav' href='#jobboard' onclick='return false;' role='button'>Job Board</a>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="400" height="217.5" x="0px" y="0px" viewbox="0 0 433.5 217.5" style="enable-background:new 0 0 433.5 217.5;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="dropdown-pointer">
+<polyline points="408.8,10 216.8,202 24.7,10 "></polyline>
+</svg>
+
+<ul aria-labelledby='jobs-dropdown' class='hidden jobs'>
+<li>
+<a data-event-action='view-jobs' data-event-category='header-nav' href='/jobs'>View Jobs</a>
+</li>
+<li class='boxed'>
+<a data-event-action='post-job' data-event-category='header-nav' href='/jobs/post'>
+Post a Job
+</a>
+</li>
+</ul>
+</li>
+<li class='donate'>
+<a data-event-action='donate' data-event-category='header-nav' href='/donate'>Donate</a>
+</li>
+<li class='dropdown-link user-area desktop'>
+<div class='user-area-inner'>
+<a class='signin' data-event-action='signin' data-event-category='header-nav' href='/login'>signin</a>
+<a class='signup' data-event-action='sign-up' data-event-category='header-nav' href='/signup'>signup</a>
+</div>
+</li>
+
+</ul>
+</nav>
+
+</div>
+</div>
+<div class='modal-fade-screen not-signedin user-links' id='user-links'>
+<div class='modal-inner user-links' id='user-links'>
+<div aria-label='close-user-links' class='modal-close' data-modal-trigger='#user-links' for='user-links' onclick='modal[&#39;opened&#39;].CLICK(event)' onkeydown='modal[&#39;opened&#39;].KEYDOWN(event)' role='button' tabindex='0'></div>
+<ul aria-labelledby='user-dropdown'>
+<li>
+<a data-event-action='find-your-network' data-event-category='header-nav' href='/networks'>Find your Network</a>
+</li>
+<li>
+<a data-event-action='coding-resources' data-event-category='header-nav' href='/resources'>Coding Resources</a>
+</li>
+<li>
+<a data-event-action='logout' data-event-category='header-nav' href='/logout'>Logout</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<div class='white-bg'>
+<div class='static-pages'>
+<h1>Women Who Code Remote Events</h1>
+<div class='container markdown'>
+<p>All times are listed UTC and local time when featuring WWCode networks. <a href="https://www.timeanddate.com/worldclock/converter.html">Find your timezone here</a>.</p>
+<p>Get updates - <a href="https://bit.ly/wwcodedigital" rel="noopener noreferrer" target="_blank">join the /Digital mailing list</a>! 📬</p>
+<p dir="ltr"><br></p><p dir="ltr">FRI 3 APR | 19:00 UTC (3:00 PM EDT)</p>
+<p>💫 <a href="https://zoom.us/webinar/register/WN_pn7jESRUQU67U9rWRhH-iA">Mini Data Science Bootcamp (Part 2)</a> with <a href="http://womenwhocode.com/datascience">WWCode Data Science</a> featuring Anju Mercian of <a href="http://womenwhocode.com/sv">WWCode Silicon Valley</a></p>
+</div>
+</div>
+</div>
+
+
+<div class='footer'>
+<div class='container'>
+<div class='footer-link-area'>
+<h2 value='involved'>Get Involved</h2>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 18.5 18.6" style="enable-background:new 0 0 18.5 18.6;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="plus">
+<style type="text/css">
+	.st0{fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g>
+	<line class="st0" x1="9.3" y1="0" x2="9.3" y2="18.6"></line>
+	<line class="st0" x1="0" y1="9.3" x2="18.6" y2="9.3"></line>
+</g>
+</svg>
+
+<div class='list'>
+<a data-event-action='contact-network' data-event-category='footer-nav' href='https://docs.google.com/forms/d/e/1FAIpQLSegYdr64FwX09AyyMcaDnp-rool2kYzqKYsH2dA1NE1QGWy0w/viewform' target='_blank'>
+<p>Volunteer</p>
+</a>
+<a data-event-action='become-sponsor' data-event-category='footer-nav' href='https://docs.google.com/a/womenwhocode.com/forms/d/e/1FAIpQLSeIKq7RFZ9n_Jw9deGRO_hYLx608TPIx8WYtbnJeoo4cb528g/viewform' target='_blank'>
+<p>Become a Sponsor</p>
+</a>
+<a data-event-action='host-event' data-event-category='footer-nav' href='https://docs.google.com/forms/d/e/1FAIpQLSe2N7GINl0a5fQUeBAyX-gGZbGG1EPXlH6TBk0hjItmD3ugOg/viewform' target='_blank'>
+<p>Host an Event</p>
+</a>
+<a data-event-action='store' data-event-category='footer-nav' href='https://shop.womenwhocode.com' target='_blank'>
+<p>WWCode Store</p>
+</a>
+<a data-event-action='submit-applaudher' data-event-category='footer-nav' href='/applaudher/new' target='_blank'>
+<p>Submit an #ApplaudHer</p>
+</a>
+<a data-event-action='donate' data-event-category='footer-nav' href='/donate' target='_blank'>
+<p>Donate</p>
+</a>
+<a data-event-action='contact-us' data-event-category='footer-nav' href='mailto:contact@womenwhocode.com'>
+<p>Contact Us</p>
+</a>
+</div>
+</div>
+<div class='footer-link-area'>
+<h2>Membership</h2>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 18.5 18.6" style="enable-background:new 0 0 18.5 18.6;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="plus">
+<style type="text/css">
+	.st0{fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g>
+	<line class="st0" x1="9.3" y1="0" x2="9.3" y2="18.6"></line>
+	<line class="st0" x1="0" y1="9.3" x2="18.6" y2="9.3"></line>
+</g>
+</svg>
+
+<div class='list'>
+<a data-event-action='become-member' data-event-category='footer-nav' href='/signup'>
+<p>Become a Member</p>
+</a>
+<a data-event-action='find-network' data-event-category='footer-nav' href='/networks'>
+<p>Find a Network</p>
+</a>
+<a data-event-action='upcoming-events' data-event-category='footer-nav' href='/events'>
+<p>Upcoming Events</p>
+</a>
+<a href="https://womenwhocode.github.io/" target='_blank'>
+<p>Contribute Code</p>
+</a>
+<a data-event-action='coding-resources' data-event-category='footer-nav' href='/resources'>
+<p>Coding Resources</p>
+</a>
+<a data-event-action='previous-code-reviews' data-event-category='footer-nav' href="https://bit.ly/WWCodeReviewHistory" target='_blank'>
+<p>Previous CODE REVIEW Issues</p>
+</a>
+<a data-event-action='opportunities' data-event-category='footer-nav' href='/opportunities'>
+<p>Experience and Learn</p>
+</a>
+</div>
+</div>
+<div class='footer-link-area'>
+<h2>Leadership</h2>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 18.5 18.6" style="enable-background:new 0 0 18.5 18.6;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="plus">
+<style type="text/css">
+	.st0{fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g>
+	<line class="st0" x1="9.3" y1="0" x2="9.3" y2="18.6"></line>
+	<line class="st0" x1="0" y1="9.3" x2="18.6" y2="9.3"></line>
+</g>
+</svg>
+
+<div class='list'>
+<a data-event-action='leadership-login' data-event-category='footer-nav' href='/login'>
+<p>My Log In</p>
+</a>
+<a data-event-action='leadership-signup' data-event-category='footer-nav' href='/signup'>
+<p>Sign up</p>
+</a>
+<a data-event-action='start-network' data-event-category='footer-nav' href='https://docs.google.com/forms/d/13ghOmrqTn3c8dtlvBw2DsSGghLfI3S8sSL1pV3-DqrQ/viewform' target='_blank'>
+<p>Start a New Network</p>
+</a>
+<a data-event-action='leadership-application' data-event-category='footer-nav' href='https://docs.google.com/forms/d/e/1FAIpQLSegYdr64FwX09AyyMcaDnp-rool2kYzqKYsH2dA1NE1QGWy0w/viewform' target='_blank'>
+<p>Leadership Application</p>
+</a>
+</div>
+</div>
+<div class='footer-link-area'>
+<h2>Job Board</h2>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 18.5 18.6" style="enable-background:new 0 0 18.5 18.6;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="plus">
+<style type="text/css">
+	.st0{fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g>
+	<line class="st0" x1="9.3" y1="0" x2="9.3" y2="18.6"></line>
+	<line class="st0" x1="0" y1="9.3" x2="18.6" y2="9.3"></line>
+</g>
+</svg>
+
+<div class='list'>
+<a data-event-action='post-job' data-event-category='footer-nav' href='/jobs/post'>
+<p>Post a Job</p>
+</a>
+<a data-event-action='view-jobs' data-event-category='footer-nav' href='/jobs'>
+<p>View Jobs</p>
+</a>
+<a data-event-action='job-about' data-event-category='footer-nav' href='/companies'>
+<p>About</p>
+</a>
+<a data-event-action='login-jobs' data-event-category='footer-nav' href='/login'>
+<p>My Log In</p>
+</a>
+<a data-event-action='jobs-signup' data-event-category='footer-nav' href='/signup'>
+<p>Sign up</p>
+</a>
+<a data-event-action='job-faq' data-event-category='footer-nav' href='/jobs/faq'>
+<p>FAQ</p>
+</a>
+</div>
+</div>
+<div class='footer-link-area'>
+<h2>About Us</h2>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewbox="0 0 18.5 18.6" style="enable-background:new 0 0 18.5 18.6;" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="plus">
+<style type="text/css">
+	.st0{fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g>
+	<line class="st0" x1="9.3" y1="0" x2="9.3" y2="18.6"></line>
+	<line class="st0" x1="0" y1="9.3" x2="18.6" y2="9.3"></line>
+</g>
+</svg>
+
+<div class='list'>
+<a data-event-action='learn-more' data-event-category='footer-nav' href='/about'>
+<p>Learn More</p>
+</a>
+<a data-event-action='general-faq' data-event-category='footer-nav' href='/faq'>
+<p>FAQ</p>
+</a>
+<a data-event-action='careers' data-event-category='footer-nav' href='/careers'>
+<p>Careers</p>
+</a>
+<a data-event-action='press' data-event-category='footer-nav' href='/press'>
+<p>Press</p>
+</a>
+<a data-event-action='tos' data-event-category='footer-nav' href='/tos'>
+<p>Terms of Service</p>
+</a>
+<a data-event-action='privacy-policy' data-event-category='footer-nav' href='/privacy-policy'>
+<p>Privacy Policy</p>
+</a>
+<a data-event-action='sponsors' data-event-category='footer-nav' href='/sponsors'>
+<p>Sponsors</p>
+</a>
+<a data-event-action='code-of-conduct' data-event-category='footer-nav' href='/codeofconduct'>
+<p>Code of Conduct</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class='lower-footer'>
+<div class='container'>
+<div class='copyright'>
+<p class='non-profit'>Women Who Code is a 501(c)(3) not-for-profit organization</p>
+<p content='telephone=no' name='format-detection'>EIN 46-4218859</p>
+<p class='copyright-tag'>© 2020 Women Who Code</p>
+</div>
+<div data-react-class="GlobalSocialIconsArea" data-react-props="{&quot;areaStyle&quot;:&quot;footer-margins&quot;,&quot;eventCategory&quot;:&quot;social-footer-nav&quot;,&quot;iconStyle&quot;:&quot;teal&quot;,&quot;socialNetworks&quot;:[&quot;facebook&quot;,&quot;twitter&quot;,&quot;github&quot;,&quot;meetup&quot;,&quot;linkedin&quot;,&quot;youtube&quot;]}"></div>
+</div>
+</div>
+<script src="https://www.womenwhocode.com/assets/footer_analytics-06cedf95e41cfa03d54bb888672fbb4ce6382f3753ccaad02ca0d6dc98915194.js"></script>
+
+</body>
+</html>
