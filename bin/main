@@ -1,5 +1,15 @@
 #!/usr/bin/env ruby
+require('csv')
 require_relative('../lib/scraper')
+
+def show_info(scraper)
+  puts(scraper.display_events)
+  print('Do you want to create a CSV file?(Y/N): ')
+  create_file = gets.chomp
+  return unless create_file.upcase == 'Y'
+
+  scraper.create_csv
+end
 
 # Setting up uri
 uri = 'https://www.womenwhocode.com/digital'
@@ -20,12 +30,12 @@ until exit
   case option
   when '1'
     scraper.parse_events
-    puts(scraper.display_events)
+    show_info(scraper)
   when '2'
     print('What are you looking for?: ')
     search = gets.chomp
     scraper.parse_events(search)
-    puts(scraper.display_events)
+    show_info(scraper)
   when '3'
     exit = true
   else

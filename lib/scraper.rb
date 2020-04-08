@@ -43,6 +43,18 @@ class Scraper
     string_events
   end
 
+  def result
+    Event.all
+  end
+
+  def create_csv
+    CSV.open('events.csv', 'w') do |csv|
+      result.each do |event|
+        csv << [event.date, event.name, event.link]
+      end
+    end
+  end
+
   private
 
   def empty_date?(date)
