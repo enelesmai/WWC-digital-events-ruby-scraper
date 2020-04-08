@@ -30,6 +30,27 @@ RSpec.describe(Scraper) do
       end
     end
   end
+  describe '#result' do
+    context 'parse events on an array' do
+      it 'returns arraylist with parsed events' do
+        scraper.parse_events
+        expect(scraper.result).to(be_an(Array))
+      end
+    end
+  end
+  describe '#create_csv' do
+    context 'create a new csv file from a list of events' do
+      it 'saves an events.csv file with the info from the list' do
+        scraper.parse_events
+        scraper.create_csv
+        results = []
+        CSV.foreach('events.csv') do |row|
+          results.push(row)
+        end
+        expect(results.count).to(eql(scraper.result.count))
+      end
+    end
+  end
   describe '#empty_date?' do
     context 'from a given list of events parse only the event where date is not empty' do
       it 'returns zero events from an invalid list' do
