@@ -10,14 +10,17 @@ This app use [Nokogiri gem](https://github.com/sparklemotion/nokogiri) to extrac
 
 ## Usage
 
-Clone this repo (you need ruby installed in your computer).
+You can clone or download this repo (you need ruby installed in your computer).
 
     git clone git@github.com:enelesmai/Ruby-Scraper.git
 
-
-Change to the app directory
+Move to the app directory
 
     cd Ruby-scraper
+
+And run the next instruction to get the gems that are needed for this project
+    
+    bundle install
 
 **IMPORTANT**
 To run this application you should add execute permissions to the main file. [Here](https://commandercoriander.net/blog/2013/02/16/making-a-ruby-script-executable/) you can find more information. 
