@@ -1,5 +1,6 @@
 require('nokogiri')
 require('open-uri')
+require('csv')
 require_relative('../lib/event.rb')
 class Scraper
   attr_reader :doc
